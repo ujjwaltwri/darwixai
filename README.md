@@ -23,13 +23,14 @@ Follow these steps to set up and run the project locally.
 
 1. Clone the Repository
 
+Bash
 git clone <your-github-repo-url>
 cd <repository-folder-name>
-
 2. Create and Activate a Virtual Environment
 
 It's highly recommended to use a virtual environment to manage dependencies.
 
+Bash
 # For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
@@ -37,7 +38,6 @@ source venv/bin/activate
 # For Windows
 python -m venv venv
 .\venv\Scripts\activate
-
 3. Install Dependencies
 
 This project requires several packages. You can install them all by creating a requirements.txt file with the content below and running pip install.
@@ -49,41 +49,40 @@ python-dotenv
 vaderSentiment
 gtts
 pyttsx3
-# Optional but recommended for best performance
+# Optional but recommended
 transformers
 torch
 textblob
-# Optional for premium voice quality
+# For Google Cloud TTS
 google-cloud-texttospeech
-
 Now, install everything with a single command:
 
+Bash
 pip install -r requirements.txt
-
 Note: The Hugging Face transformers library can be large. It's optional but required for the best emotion analysis.
 
 4. Configure Environment Variables
 
 Create a file named .env in the root of the project directory. This file will store your configuration and API keys.
 
+Code snippet
 # --- REQUIRED ---
 # No keys are strictly required to run, as the app falls back to free engines.
 
 # --- OPTIONAL ---
-# Set the default engines. Options are listed in the app.py file.
+# Set the default engines. Options are listed in the file.
 # EMOTION_ENGINE=ensemble  # (vader, huggingface, textblob, ensemble)
 # TTS_ENGINE=gtts          # (gtts, pyttsx3, google_cloud, macos_say)
 
 # To enable Google Cloud TTS, uncomment the following line and
 # point it to your JSON credentials file.
 # GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/google-credentials.json"
-
 5. Run the Application
 
 Once the dependencies are installed and the .env file is configured, run the Flask application:
 
+Bash
 python app.py
-
 The application will start on a free port (usually 5000) and display the URL in the terminal. Open that URL in your web browser to use the Empathy Engine.
 
 🎨 Design Choices
