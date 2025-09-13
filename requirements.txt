@@ -1,11 +1,11 @@
 flask
 gunicorn
 vaderSentiment
-transformers==4.44.2
-torch==2.3.1
-textblob==0.18.0.post0
-gtts==2.5.1
-pyttsx3==2.90
+transformers
+torch
+textblob
+gtts
+pyttsx3
 python-dotenv
 google-cloud-texttospeech
 setuptools>=65.0.0
