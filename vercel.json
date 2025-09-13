@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.py"
+      }
+    ],
+    "env": {
+      "EMOTION_ENGINE": "ensemble",
+      "TTS_ENGINE": "gtts",
+      "FALLBACK_TTS": "pyttsx3",
+      "MAX_TEXT_LENGTH": "500"
+    },
+    "functions": {
+      "app.py": {
+        "maxDuration": 30
+      }
+    }
+  }
