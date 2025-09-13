@@ -8,3 +8,12 @@ textblob
 
 # Text-to-Speech
 gtts
+pyttsx3
+
+# AI/ML Libraries (currently missing)
+transformers
+torch
+
+# Additional dependencies that might be needed
+requests
+numpy
